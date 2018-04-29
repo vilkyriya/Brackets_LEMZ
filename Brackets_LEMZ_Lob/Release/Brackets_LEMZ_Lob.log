@@ -1,0 +1,23 @@
+﻿Построение начато 28.04.2018 23:39:07.
+     1>Проект "D:\Учёба\Чтото\Brackets_LEMZ_Lob\Brackets_LEMZ_Lob\Brackets_LEMZ_Lob.vcxproj" в узле 2 (целевые объекты build).
+     1>InitializeBuildStatus:
+         Создание "Release\Brackets_LEMZ_Lob.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Brackets_Main.cpp
+         Brackets_Main.cpp
+     1>Brackets_Main.cpp(22): warning C4018: <: несоответствие типов со знаком и без знака
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Учёба\Чтото\Brackets_LEMZ_Lob\Release\Brackets_LEMZ_Lob.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\Brackets_LEMZ_Lob.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\Учёба\Чтото\Brackets_LEMZ_Lob\Release\Brackets_LEMZ_Lob.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Учёба\Чтото\Brackets_LEMZ_Lob\Release\Brackets_LEMZ_Lob.lib" /MACHINE:X86 Release\Brackets_Main.obj
+         Создание кода
+         Создание кода завершено
+         Brackets_LEMZ_Lob.vcxproj -> D:\Учёба\Чтото\Brackets_LEMZ_Lob\Release\Brackets_LEMZ_Lob.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\Учёба\Чтото\Brackets_LEMZ_Lob\Release\Brackets_LEMZ_Lob.exe;#1" /manifest Release\Brackets_LEMZ_Lob.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Файл "Release\Brackets_LEMZ_Lob.unsuccessfulbuild" удаляется.
+         Обращение к "Release\Brackets_LEMZ_Lob.lastbuildstate".
+     1>Построение проекта "D:\Учёба\Чтото\Brackets_LEMZ_Lob\Brackets_LEMZ_Lob\Brackets_LEMZ_Lob.vcxproj" завершено (целевые объекты build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:02.90

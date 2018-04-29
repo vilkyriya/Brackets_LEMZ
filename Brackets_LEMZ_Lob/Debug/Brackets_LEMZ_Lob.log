@@ -1,0 +1,13 @@
+﻿Построение начато 28.04.2018 23:13:11.
+     1>Проект "D:\Учёба\Чтото\Brackets_LEMZ_Lob\Brackets_LEMZ_Lob\Brackets_LEMZ_Lob.vcxproj" в узле 2 (целевые объекты build).
+     1>InitializeBuildStatus:
+         Создание "Debug\Brackets_LEMZ_Lob.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Brackets_Main.cpp
+         Brackets_Main.cpp
+     1>d:\учёба\чтото\brackets_lemz_lob\brackets_lemz_lob\brackets_main.cpp(16): error C3861: Check_Brackets: идентификатор не найден
+     1>Построение проекта "D:\Учёба\Чтото\Brackets_LEMZ_Lob\Brackets_LEMZ_Lob\Brackets_LEMZ_Lob.vcxproj" завершено (целевые объекты build) с ошибкой.
+
+СБОЙ построения.
+
+Затраченное время: 00:00:03.05

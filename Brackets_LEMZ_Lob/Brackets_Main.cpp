@@ -6,57 +6,72 @@
 
 using namespace std;
 
+char brackets_open[] = "({[<"; // все возможны открывающие скобки
+char brackets_close[] = ")}]>"; // все возможны закрывающие скобки
+
+class LineForCheck 
+{
+	private:
+		// Поиск индекса
+		int findIndex (char ch, string brackets)
+		{
+			for (unsigned int i = 0; i < brackets.length(); i++)
+			if (brackets[i] == ch)
+				return i;
+			return -1;
+		}
+
+	public:
+		// Проверка	строки
+		bool validateLine (string line)
+		{
+			stack<int> openBrackets;
+
+			for (unsigned int i = 0; i < line.length(); ++i)
+			{
+				// Проверка символа на соответствие открывающей скобке
+				int index = findIndex(line[i], brackets_open);
+				if (index > -1)
+				{
+					openBrackets.push(index);
+					continue;
+				}
+				// Проверка символа на соответствие закрывающей скобке
+				index = findIndex(line[i], brackets_close);
+				if (index > -1)
+				{
+					if (openBrackets.empty())
+					{
+						return false;
+					}
+					else
+					{
+						if (openBrackets.top() == index) //индексы парных скобок должны быть одинаковы
+							openBrackets.pop();
+						else
+							return false;
+					}
+				}
+			}
+			return true;
+		}
+};
+
 int main()
 {	
 	setlocale(LC_ALL, "rus"); // для корректного отображения русских символов в консоли
-
 	string str = "";	// строка, которую необходимо проверить
-	const int brackets_app = 4; // количество разновидностей скобок
-	char brackets_open[brackets_app + 1] = "({[<"; // все возможны открывающие скобки
-	char brackets_close[brackets_app + 1] = ")}]>"; // все возможны закрывающие скобки
+	bool isCorrect = false; // переменная результата проверки
 
-	bool check_result = false; // переменная результата проверки
+	cout << "Введите текст:\n";
+	getline(cin, str);
 
-	while (true)
-	{
-		cout << "Введите текст:\n";
-		getline(cin, str);
+	LineForCheck lineForCheck;
 
-		stack<int> temp_brackets; // стек с текущими проверяемыми скобками
+	isCorrect = lineForCheck.validateLine(str);
 
-		for (int i = 0; i < str.length(); i++)
-		{
-			// проверка
-			int br_ind = 0; // индекс текущей скобки
-		
-			for (int j = 0; j <= brackets_app; j++) // сравнили с открывающими скобками
-			{
-				if (str[i] == brackets_open[j]) // нашли совпадение с открывающими скобками
-				{
-						temp_brackets.push(j); // положили в стек
-				}
-				else if (str[i] == brackets_close[j]) // не нашли совпадение с открывающими скобками, ищем с закрывающими
-				{
-					if (!temp_brackets.empty())
-					{
-							br_ind = j;
-							int last_bracket = temp_brackets.top(); // смотрим индекс последней открывающей скобки
+	if (isCorrect) cout << "Скобки расставлены корректно\n";
+	else cout << "Скобки расставлены некорректно\n";
 
-							if (last_bracket == br_ind) temp_brackets.pop();
-							else temp_brackets.push(-1); // закрывающая скобка не соответствует последней открытой
-							
-					}
-					else temp_brackets.push(-1);// стек пуст, но есть скобка
-				}
-			}
-		}
-
-		if (!temp_brackets.empty()) check_result = false;
-		else check_result = true;
-
-		// Вывод результата проверки
-		if (!check_result) cout << "Скобки расставлены некорректно\n";
-		else cout << "Скобки расставлены корректно\n";
-	}
     return 0;
 }

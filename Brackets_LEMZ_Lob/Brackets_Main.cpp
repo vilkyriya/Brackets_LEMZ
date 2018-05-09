@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class LineForCheck // Класс для проверки передаваемой строки на корректную расстановку скобок типов (), {}, [], <>
+class BracketsValidator // Класс для проверки передаваемой строки на корректную расстановку скобок типов (), {}, [], <>
 {
 	private:
 
@@ -66,9 +66,9 @@ int main()
 	cout << "Введите текст:\n";
 	getline(cin, str);
 
-	LineForCheck lineForCheck;
+	BracketsValidator bracketsValidator;
 
-	isCorrect = lineForCheck.validateLine(str);
+	isCorrect = bracketsValidator.validateLine(str);
 
 	if (isCorrect) cout << "Скобки расставлены корректно\n";
 	else cout << "Скобки расставлены некорректно\n";

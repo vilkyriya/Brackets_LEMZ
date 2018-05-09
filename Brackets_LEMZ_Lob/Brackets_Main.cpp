@@ -6,12 +6,10 @@
 
 using namespace std;
 
-char brackets_open[] = "({[<"; // все возможны открывающие скобки
-char brackets_close[] = ")}]>"; // все возможны закрывающие скобки
-
-class LineForCheck 
+class LineForCheck // Класс для проверки передаваемой строки на корректную расстановку скобок типов (), {}, [], <>
 {
 	private:
+
 		// Поиск индекса
 		int findIndex (char ch, string brackets)
 		{
@@ -26,6 +24,8 @@ class LineForCheck
 		bool validateLine (string line)
 		{
 			stack<int> openBrackets;
+			char brackets_open[] = "({[<"; // все возможны открывающие скобки
+			char brackets_close[] = ")}]>"; // все возможны закрывающие скобки
 
 			for (unsigned int i = 0; i < line.length(); ++i)
 			{

@@ -6,10 +6,9 @@
 
 using namespace std;
 
-class BracketsValidator // Класс для проверки передаваемой строки на корректную расстановку скобок типов (), {}, [], <>
+class BracketsValidator // Класс для проверки передаваемой строки на корректную расстановку скобок, указанных в Main
 {
 	private:
-
 		// Поиск индекса
 		int findIndex (char ch, string brackets)
 		{
@@ -20,12 +19,13 @@ class BracketsValidator // Класс для проверки передавае
 		}
 
 	public:
+		string brackets_open; // все возможны открывающие скобки
+		string brackets_close; // все возможны закрывающие скобки
+
 		// Проверка	строки
-		bool validateLine (string line)
+		bool validateLine (const string& line)
 		{
 			stack<int> openBrackets;
-			char brackets_open[] = "({[<"; // все возможны открывающие скобки
-			char brackets_close[] = ")}]>"; // все возможны закрывающие скобки
 
 			for (unsigned int i = 0; i < line.length(); ++i)
 			{
@@ -67,6 +67,10 @@ int main()
 	getline(cin, str);
 
 	BracketsValidator bracketsValidator;
+
+	// передаём типы скобок, которые будут отслеживаться в строке
+	bracketsValidator.brackets_open = "({[<";
+	bracketsValidator.brackets_close = ")}]>";
 
 	isCorrect = bracketsValidator.validateLine(str);
 

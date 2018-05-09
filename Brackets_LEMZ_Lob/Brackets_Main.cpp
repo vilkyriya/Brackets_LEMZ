@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <cstdlib>
 #include <cstring>
 #include <sstream>
@@ -6,13 +6,13 @@
 
 using namespace std;
 
-char brackets_open[] = "({[<"; // все возможны открывающие скобки
-char brackets_close[] = ")}]>"; // все возможны закрывающие скобки
+char brackets_open[] = "({[<"; // РІСЃРµ РІРѕР·РјРѕР¶РЅС‹ РѕС‚РєСЂС‹РІР°СЋС‰РёРµ СЃРєРѕР±РєРё
+char brackets_close[] = ")}]>"; // РІСЃРµ РІРѕР·РјРѕР¶РЅС‹ Р·Р°РєСЂС‹РІР°СЋС‰РёРµ СЃРєРѕР±РєРё
 
 class LineForCheck 
 {
 	private:
-		// Поиск индекса
+		// РџРѕРёСЃРє РёРЅРґРµРєСЃР°
 		int findIndex (char ch, string brackets)
 		{
 			for (unsigned int i = 0; i < brackets.length(); i++)
@@ -22,21 +22,21 @@ class LineForCheck
 		}
 
 	public:
-		// Проверка	строки
+		// РџСЂРѕРІРµСЂРєР°	СЃС‚СЂРѕРєРё
 		bool validateLine (string line)
 		{
 			stack<int> openBrackets;
 
 			for (unsigned int i = 0; i < line.length(); ++i)
 			{
-				// Проверка символа на соответствие открывающей скобке
+				// РџСЂРѕРІРµСЂРєР° СЃРёРјРІРѕР»Р° РЅР° СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРµ РѕС‚РєСЂС‹РІР°СЋС‰РµР№ СЃРєРѕР±РєРµ
 				int index = findIndex(line[i], brackets_open);
 				if (index > -1)
 				{
 					openBrackets.push(index);
 					continue;
 				}
-				// Проверка символа на соответствие закрывающей скобке
+				// РџСЂРѕРІРµСЂРєР° СЃРёРјРІРѕР»Р° РЅР° СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРµ Р·Р°РєСЂС‹РІР°СЋС‰РµР№ СЃРєРѕР±РєРµ
 				index = findIndex(line[i], brackets_close);
 				if (index > -1)
 				{
@@ -46,7 +46,7 @@ class LineForCheck
 					}
 					else
 					{
-						if (openBrackets.top() == index) //индексы парных скобок должны быть одинаковы
+						if (openBrackets.top() == index) //РёРЅРґРµРєСЃС‹ РїР°СЂРЅС‹С… СЃРєРѕР±РѕРє РґРѕР»Р¶РЅС‹ Р±С‹С‚СЊ РѕРґРёРЅР°РєРѕРІС‹
 							openBrackets.pop();
 						else
 							return false;
@@ -59,19 +59,19 @@ class LineForCheck
 
 int main()
 {	
-	setlocale(LC_ALL, "rus"); // для корректного отображения русских символов в консоли
-	string str = "";	// строка, которую необходимо проверить
-	bool isCorrect = false; // переменная результата проверки
+	setlocale(LC_ALL, "rus"); // РґР»СЏ РєРѕСЂСЂРµРєС‚РЅРѕРіРѕ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЂСѓСЃСЃРєРёС… СЃРёРјРІРѕР»РѕРІ РІ РєРѕРЅСЃРѕР»Рё
+	string str = "";	// СЃС‚СЂРѕРєР°, РєРѕС‚РѕСЂСѓСЋ РЅРµРѕР±С…РѕРґРёРјРѕ РїСЂРѕРІРµСЂРёС‚СЊ
+	bool isCorrect = false; // РїРµСЂРµРјРµРЅРЅР°СЏ СЂРµР·СѓР»СЊС‚Р°С‚Р° РїСЂРѕРІРµСЂРєРё
 
-	cout << "Введите текст:\n";
+	cout << "Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚:\n";
 	getline(cin, str);
 
 	LineForCheck lineForCheck;
 
 	isCorrect = lineForCheck.validateLine(str);
 
-	if (isCorrect) cout << "Скобки расставлены корректно\n";
-	else cout << "Скобки расставлены некорректно\n";
+	if (isCorrect) cout << "РЎРєРѕР±РєРё СЂР°СЃСЃС‚Р°РІР»РµРЅС‹ РєРѕСЂСЂРµРєС‚РЅРѕ\n";
+	else cout << "РЎРєРѕР±РєРё СЂР°СЃСЃС‚Р°РІР»РµРЅС‹ РЅРµРєРѕСЂСЂРµРєС‚РЅРѕ\n";
 
     return 0;
 }

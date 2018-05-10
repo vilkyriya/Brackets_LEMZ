@@ -1,4 +1,4 @@
-#ifndef BRACKETSVALIDATOR_H
+п»ї#ifndef BRACKETSVALIDATOR_H
 #define BRACKETSVALIDATOR_H
 
 #include <string>
@@ -12,8 +12,8 @@ public:
 	~BracketsValidator();
 	bool validateLine (string&);
 private:
-	string brackets_open; // все возможные открывающие скобки
-	string brackets_close; // все возможные закрывающие скобки
+	string brackets_open; // РІСЃРµ РІРѕР·РјРѕР¶РЅС‹Рµ РѕС‚РєСЂС‹РІР°СЋС‰РёРµ СЃРєРѕР±РєРё
+	string brackets_close; // РІСЃРµ РІРѕР·РјРѕР¶РЅС‹Рµ Р·Р°РєСЂС‹РІР°СЋС‰РёРµ СЃРєРѕР±РєРё
 	int findIndex (char, string);
 };
 

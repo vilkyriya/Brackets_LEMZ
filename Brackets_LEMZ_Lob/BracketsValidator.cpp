@@ -1,4 +1,4 @@
-#include "BracketsValidator.h"
+п»ї#include "BracketsValidator.h"
 #include <stack>
 #include <string>
 
@@ -8,7 +8,7 @@ BracketsValidator::BracketsValidator() : brackets_open("({[<"), brackets_close("
 BracketsValidator::~BracketsValidator() 
 {}
 
-// Поиск индекса
+// РџРѕРёСЃРє РёРЅРґРµРєСЃР°
 int BracketsValidator::findIndex (char ch, string brackets)
 {
 	for (unsigned int i = 0; i < brackets.length(); i++)
@@ -17,21 +17,21 @@ int BracketsValidator::findIndex (char ch, string brackets)
 	return -1;
 }
 
-// Проверка	строки
+// РџСЂРѕРІРµСЂРєР°	СЃС‚СЂРѕРєРё
 bool BracketsValidator::validateLine (string& line)
 {
 	stack<int> openBrackets;
 
 	for (unsigned int i = 0; i < line.length(); ++i)
 	{
-		// Проверка символа на соответствие открывающей скобке
+		// РџСЂРѕРІРµСЂРєР° СЃРёРјРІРѕР»Р° РЅР° СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРµ РѕС‚РєСЂС‹РІР°СЋС‰РµР№ СЃРєРѕР±РєРµ
 		int index = findIndex(line[i], brackets_open);
 		if (index > -1)
 		{
 			openBrackets.push(index);
 			continue;
 		}
-		// Проверка символа на соответствие закрывающей скобке
+		// РџСЂРѕРІРµСЂРєР° СЃРёРјРІРѕР»Р° РЅР° СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРµ Р·Р°РєСЂС‹РІР°СЋС‰РµР№ СЃРєРѕР±РєРµ
 		index = findIndex(line[i], brackets_close);
 		if (index > -1)
 		{
@@ -41,7 +41,7 @@ bool BracketsValidator::validateLine (string& line)
 			}
 			else
 			{
-				if (openBrackets.top() == index) //индексы парных скобок должны быть одинаковы
+				if (openBrackets.top() == index) //РёРЅРґРµРєСЃС‹ РїР°СЂРЅС‹С… СЃРєРѕР±РѕРє РґРѕР»Р¶РЅС‹ Р±С‹С‚СЊ РѕРґРёРЅР°РєРѕРІС‹
 					openBrackets.pop();
 				else
 					return false;
